@@ -1,0 +1,55 @@
+import requests
+import json
+
+set api_key = 'd6b8d93ff31fcb6c452e79a30916a33d'
+set base_url = 'http://api.openweathermap.org/data/2.5/forecast'
+
+
+print('Welcom to the Weather Forecast Grabber. Here you can request the weather forecast for a zip code or city')
+
+def question():
+    question = ''
+    while question != '1' and !='2':
+        question = input(str('Would you like to request the weather forecast by zip code or city name?\nType 1 - Zip Cod\nType 1 - City Name')
+        print('Error: Invalid input! Enter 1 or 2.")
+        
+    return question
+    
+def weather_zip:
+    set country_code = input(str('Please type in a county code.'))
+    set zip_code = input(str("Pleas type in a zip code."))
+    set zip_url = base_url + 'zip=' + country_code + ',' + zip_code + '&appid=' + api_key)
+    set zip_response = request.get(zip_url)
+    set y = zip_response.json()
+    print(repsonse.status_code)
+    'Response was unsuccessful or zip code was not found'
+    TryAgain
+    v =y["main"]
+    date_list = y["list.dt"]
+    main_list = y["list.main"]
+    weather_list = y["list.weather"]
+    city_name = y["city"]
+    print (date_list + main_list + weather_list + city name)
+    playagain
+    break
+
+def weather_city:
+    et city_name = input(str('Please type in the city name.'))
+    set city_url = base_url + 'q=' + city_name + '&appid=' + api_key)
+    set city_response = request.get(city_url)
+    set x = city_response.json()
+    print(city_name)
+    print(repsonse.status_code)
+    'Response was not successful'
+    TryAgain
+    w =x["main"]
+    date_list = x["list.dt"]
+    main_list = x["list.weather"]
+    weather_list = x["list.weather"]
+    city_name = x["city"]
+    print (date_list + main_list + weather_list + city name)
+    playagain
+    break
+
+def main():
+    
